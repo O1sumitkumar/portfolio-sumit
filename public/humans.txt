@@ -10,7 +10,7 @@ _______________________________________________________________________________
 
 DESIGNER | デザイナー
 
-Hamish Williams
+Sumit kumar jha
 Hand crafted design & web development
 
 Design tools:
@@ -18,8 +18,8 @@ Figma
 Photoshop
 Blender
 
-twitter.com/hamishmw
-github.com/hamishmw
+twitter.com/@1sumitkumar
+github.com/@1sumitkumar
 
 _______________________________________________________________________________
 
