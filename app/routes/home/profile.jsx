@@ -24,7 +24,7 @@ const ProfileText = ({ visible, titleId }) => (
       I’m Sumit, currently I live in India working as a senior software Engineer at{' '}
       <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include Web, Android,
       iOS development and Tech illustration. Being comfortable with various technologies
-      allows me to rapidly develop and validate experiences. If you’re interested in the
+      allows me to rapidly develop and validate experiences. If you’re interested in these
       technologies and software I use check out my <Link href="/uses">uses page</Link>.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
