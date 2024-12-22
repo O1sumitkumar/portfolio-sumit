@@ -22,7 +22,7 @@ const ProfileText = ({ visible, titleId }) => (
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       I’m Sumit, currently I live in India working as a senior software Engineer at{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include Web, Android,
+      <Link href="https://www.webashlar.com">WebAshlar</Link>. My projects include Web, Android,
       iOS development and Tech illustration. Being comfortable with various technologies
       allows me to rapidly develop and validate experiences. If you’re interested in these
       technologies and software I use check out my <Link href="/uses">uses page</Link>.
@@ -86,7 +86,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   width={960}
                   height={1280}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me smiling like a goofball at the Qwilr office in Sydney"
+                  alt="Me smiling like a goofball at the WebAshlar office in Sydney"
                 />
                 <svg className={styles.svg} data-visible={visible} viewBox="0 0 136 766">
                   <use href={`${katakana}#katakana-profile`} />
