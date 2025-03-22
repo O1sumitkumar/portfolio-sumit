@@ -1,7 +1,9 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+  ______ 
+ / ____/
+/ /___  
+\___  \ 
+____/ / 
+\____/
 
 The humans.txt file explains the team, technology,
 and graphic assets behind this site humanstxt.org.
