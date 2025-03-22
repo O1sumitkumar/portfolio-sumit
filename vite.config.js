@@ -7,6 +7,7 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import rehypeImgSize from 'rehype-img-size';
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from '@mapbox/rehype-prism';
+import glsl from 'vite-plugin-glsl';
 
 const isStorybook = process.argv[1]?.includes('storybook');
 
@@ -16,21 +17,37 @@ export default defineConfig({
     assetsInlineLimit: 1024,
   },
   server: {
-    port: 7777,
+    port: process.env.NODE_ENV === 'development' ? 7777 : undefined,
   },
   plugins: [
+    glsl({
+      include: ['**/*.glsl', '**/*.wgsl', '**/*.vert', '**/*.frag'],
+      warnDuplicated: true,
+      defaultExtension: 'glsl',
+      compress: false,
+      watch: true,
+    }),
     mdx({
-      rehypePlugins: [[rehypeImgSize, { dir: 'public' }], rehypeSlug, rehypePrism],
-      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+      rehypePlugins: [
+        [rehypeImgSize, { dir: 'public' }],
+        rehypeSlug,
+        rehypePrism
+      ],
+      remarkPlugins: [
+        remarkFrontmatter,
+        remarkMdxFrontmatter
+      ],
       providerImportSource: '@mdx-js/react',
     }),
     remix({
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });
+          // Add other routes here as needed.
         });
       },
     }),
     jsconfigPaths(),
   ],
+  assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
 });
