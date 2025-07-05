@@ -1,7 +1,28 @@
 name = "portfolio-sumit"
 compatibility_date = "2025-07-05"
 
-# Required for Pages
+# Tells Cloudflare Pages where to find the output for static assets
 pages_build_output_dir = "./public"
 
+# Global environment variables for Cloudflare Pages and Workers
+[vars]
+ENVIRONMENT = "production"
+EMAIL = "sumeetjha365@gmail.comm"
+FROM_EMAIL = "sumeetjha365@gmail.com"
+AWS_ACCESS_KEY_ID = "your-aws-access-key-id"
+AWS_SECRET_ACCESS_KEY = "your-aws-secret-access-key"
+SESSION_SECRET = "testmatch"
 
+# Uncomment if your app uses Node.js APIs (like fs, path, etc.)
+# node_compat = true
+
+# Optional: define build command if needed
+# [build]
+# command = "npm run build"
+
+# Optional: define preview settings (for `wrangler dev`)
+# [dev]
+# port = 8788
+# local_protocol = "http"
+# ip = "127.0.0.1"
+# vars = { ENVIRONMENT = "development" }
