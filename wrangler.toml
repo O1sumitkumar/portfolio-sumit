@@ -1,3 +1,7 @@
-kv_namespaces = [
-  { id = "MY_KV", binding="MY_KV" }
-]
+name = "portfolio-sumit"
+compatibility_date = "2025-07-05"
+
+# Required for Pages
+pages_build_output_dir = "./public"
+
+
