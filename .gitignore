@@ -10,3 +10,7 @@ node_modules
 public/draco
 storybook-static
 .vercel
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
