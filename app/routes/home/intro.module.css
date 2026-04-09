@@ -168,6 +168,22 @@
   }
 }
 
+.roleVariantFull {
+  display: inline;
+
+  @media (--mediaMobile), (--mediaMobileLS) {
+    display: none;
+  }
+}
+
+.roleVariantShort {
+  display: none;
+
+  @media (--mediaMobile), (--mediaMobileLS) {
+    display: inline;
+  }
+}
+
 @keyframes introLine {
   0% {
     transform: scaleX(0);

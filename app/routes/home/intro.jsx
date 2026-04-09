@@ -17,6 +17,8 @@ const DisplacementSphere = lazy(() =>
   import('./displacement-sphere').then(module => ({ default: module.DisplacementSphere }))
 );
 
+const roleFull = config.roleFull ?? config.role;
+
 export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
   const { theme } = useTheme();
   const { disciplines } = config;
@@ -74,7 +76,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
                 <VisuallyHidden className={styles.label}>
-                  {`${config.role} + ${introLabel}`}
+                  {`${roleFull} + ${introLabel}`}
                 </VisuallyHidden>
                 <span aria-hidden className={styles.row}>
                   <span
@@ -82,7 +84,8 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                     data-status={status}
                     style={cssProps({ delay: tokens.base.durationXS })}
                   >
-                    {config.role}
+                    <span className={styles.roleVariantFull}>{roleFull}</span>
+                    <span className={styles.roleVariantShort}>{config.role}</span>
                   </span>
                   <span className={styles.line} data-status={status} />
                 </span>

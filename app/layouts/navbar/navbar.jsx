@@ -146,7 +146,7 @@ export const Navbar = () => {
         to={location.pathname === '/' ? '/#intro' : '/'}
         data-navbar-item
         className={styles.logo}
-        aria-label={`${config.name}, ${config.role}`}
+        aria-label={`${config.name}, ${config.roleFull ?? config.role}`}
         onClick={handleMobileNavClick}
       >
         <Monogram highlight />
