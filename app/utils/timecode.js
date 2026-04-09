@@ -21,7 +21,9 @@ export function zeroPrefix(value) {
 
 export function readingTime(text) {
   const wpm = 225;
-  const words = text.trim().split(/\s+/).length;
+  // Handle cases where text might not be a string
+  const content = typeof text === 'string' ? text : text?.default || '';
+  const words = content.trim().split(/\s+/).length;
   const time = words / wpm;
   return time * 1000 * 60;
 }

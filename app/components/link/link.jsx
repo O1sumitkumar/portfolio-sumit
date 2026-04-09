@@ -27,16 +27,16 @@ export const Link = forwardRef(
       ...rest,
     };
 
-    if (isAnchor(href)) {
+    if (isAnchor(href) || !href || href === '') {
       return (
-        <a {...linkProps} href={href}>
+        <a {...linkProps} href={href || undefined}>
           {children}
         </a>
       );
     }
 
     return (
-      <RouterLink unstable_viewTransition prefetch="intent" {...linkProps} to={href}>
+      <RouterLink prefetch="intent" {...linkProps} to={href}>
         {children}
       </RouterLink>
     );
