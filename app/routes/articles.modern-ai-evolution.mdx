@@ -1,0 +1,46 @@
+---
+title: 'The modern arc of AI: from narrow tools to general assistants'
+abstract: A concise tour of how artificial intelligence moved from hand-crafted rules to large pretrained models, what changed in the 2020s, and what builders should expect next.
+date: '2026-04-09'
+---
+
+## A long arc in a short history
+
+Artificial intelligence is not one invention; it is a stack of ideas that keep getting recombined. What feels “new” every few years is usually an old idea meeting enough data, compute, and engineering polish to work at scale. The last decade is easier to understand if you separate **what models can do** from **how we build and deploy them**.
+
+## Rules, features, and the limits of hand-tuning
+
+Early practical systems were often **symbolic**: explicit rules, knowledge bases, and search. They were interpretable and controllable, but brittle outside narrow domains. Statistical learning shifted the field toward **data-driven patterns**: engineers designed features, and models learned weights. That era gave us strong results in vision, speech, and ranking, but progress still depended heavily on domain expertise and feature engineering.
+
+**Deep learning** reduced some of that manual work by learning representations from raw signals. Convolutional networks reshaped computer vision; recurrent architectures helped with sequences. The story was no longer only “better features” but “deeper networks and bigger datasets.” Even then, many deployments were **narrow specialists**: one model per task, with custom training pipelines and careful integration.
+
+## Pretraining and the shift to general-purpose layers
+
+A pivotal change was **pretraining** on broad data, then **fine-tuning** or adapting for a specific job. Instead of training every application from scratch, teams reused representations that already captured language, vision, or multimodal structure. Transfer learning was not new, but at scale it became the default workflow.
+
+That set the stage for **transformers** and **self-supervised objectives** in language: train on vast text to predict masked or next tokens, then adapt downstream. The empirical finding was consistent: more parameters, data, and compute tended to improve not just benchmark scores but **breadth**—the same backbone could support summarization, classification, translation, and dialogue with lighter task-specific heads or prompts.
+
+## The 2020s: scale, alignment, and product surfaces
+
+Three forces converged in public view:
+
+1. **Scale** — Larger models exhibited emergent behaviors useful for instruction following, tool use, and multi-step reasoning, even when those behaviors were not explicitly programmed.
+2. **Alignment and safety work** — Reinforcement learning from human feedback (and related methods) made models more helpful and steerable for end users, at the cost of more complex training stacks and ongoing research into reliability and misuse.
+3. **Product integration** — APIs, chat interfaces, copilots, and agents moved models from demos into editors, IDEs, support flows, and creative tools.
+
+At the same time, **open-weight and efficient models** improved, so not every product needed frontier-scale infrastructure. Distillation, quantization, and specialized hardware brought inference closer to edge devices and smaller teams.
+
+## What “modern AI” means for builders today
+
+If you ship software, the practical questions are less about sci-fi timelines and more about engineering trade-offs:
+
+- **Reliability** — Generative outputs are probabilistic. Design for verification, fallbacks, and human-in-the-loop where stakes are high.
+- **Latency and cost** — Token-based pricing and long contexts change how you cache, chunk, and retrieve information (**RAG** and structured tools versus stuffing everything into a prompt).
+- **Evaluation** — Classic unit tests are not enough; you need task-specific evals, regression suites for prompts, and monitoring in production.
+- **Privacy and compliance** — Data residency, retention, and whether customer content trains third-party models are contract-level decisions, not afterthoughts.
+
+The evolution continues toward **multimodal** systems (text, image, audio, video in one loop), **long-horizon agents** with planning and memory, and tighter **human–computer collaboration** rather than full autonomy in critical paths.
+
+## Closing thought
+
+The through-line from symbolic rules to today’s large models is not “machines replaced humans” but **automation climbed the stack**: from arithmetic to features, from features to representations, and from representations to language and reasoning interfaces. The next chapter belongs to how responsibly we embed those interfaces into real workflows—and how clearly we measure when they help instead of merely impress.

@@ -1,12 +1,12 @@
 import config from '~/config.json';
 
-const { name, url, twitter } = config;
+const { name, url, twitter, initials, metaTitlePrefix } = config;
 const defaultOgImage = `${url}/social-image.png`;
 
 export function baseMeta({
   title,
   description,
-  prefix = name,
+  prefix = metaTitlePrefix ?? initials ?? name,
   ogImage = defaultOgImage,
 }) {
   const titleText = [prefix, title].filter(Boolean).join(' | ');

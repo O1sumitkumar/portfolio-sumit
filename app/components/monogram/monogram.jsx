@@ -1,10 +1,11 @@
 import { forwardRef, useId } from 'react';
+import config from '~/config.json';
 import { classes } from '~/utils/style';
 import styles from './monogram.module.css';
 
 export const Monogram = forwardRef(({ highlight, className, ...props }, ref) => {
   const id = useId();
-  const clipId = `${id}monogram-clip`;
+  const clipId = `${id.replaceAll(':', '')}-monogram-clip`;
 
   return (
     <svg
@@ -18,7 +19,18 @@ export const Monogram = forwardRef(({ highlight, className, ...props }, ref) => 
     >
       <defs>
         <clipPath id={clipId}>
-          <path d="M0 0h6.5a6 6 0 0 1 5.2 3.1L19.4 17l4-9L19 0h6.5a6 6 0 0 1 5.2 3.1L39.5 19 35 29 24.5 10 16 29 0 0Zm46.7 2.8A2 2 0 0 0 45 0h-7l5.5 10 3.2-7.2Z" />
+          <text
+            transform="translate(24 14.5) scale(1.28) translate(-24 -14.5)"
+            x="24"
+            y="14.5"
+            dominantBaseline="central"
+            textAnchor="middle"
+            fontFamily="Gotham, system-ui, sans-serif"
+            fontWeight="700"
+            fontSize="32"
+          >
+            {config.initials ?? 'S'}
+          </text>
         </clipPath>
       </defs>
       <rect clipPath={`url(#${clipId})`} width="100%" height="100%" />
