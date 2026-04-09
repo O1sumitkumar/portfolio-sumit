@@ -5,7 +5,8 @@ node_modules
 .env
 
 .wrangler
-# .dev.vars
+# .env
 
 public/draco
 storybook-static
+.vercel

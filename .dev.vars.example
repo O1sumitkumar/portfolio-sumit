@@ -1,4 +1,4 @@
-# Rename this file from .dev.vars.example to .dev.vars and paste in your credentials
+# Copy this file to .env and paste in your credentials
 
 ENVIRONMENT=development
 
