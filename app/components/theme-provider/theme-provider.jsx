@@ -173,11 +173,112 @@ const fontStyles = squish(`
   }
 `);
 
+const baseStyles = squish(`
+  :root {
+    --mobileNavOffset: calc(var(--spaceOuter) * 2 + var(--space2XL));
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :where(html, body) {
+    min-height: 100%;
+    width: 100%;
+    font-family: var(--fontStack);
+    font-weight: var(--fontWeightRegular);
+    background-color: var(--background);
+    color: var(--textBody);
+    transition: var(--durationM) ease;
+    transition-property: background, opacity;
+    overflow-x: hidden;
+    opacity: 1;
+  }
+
+  :where(*, *::before, *::after) {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+  }
+
+  :where(input, textarea, select, button) {
+    font: inherit;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    appearance: none;
+  }
+
+  :where(button, a) {
+    touch-action: manipulation;
+  }
+
+  :where(svg, img, picture, video, iframe, canvas) {
+    display: block;
+  }
+
+  :where(code, pre) {
+    font-family: var(--monoFontStack);
+  }
+
+  :any-link {
+    text-decoration: none;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--black);
+  }
+
+  :focus {
+    outline: 4px solid var(--text);
+    outline-offset: 4px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes reveal {
+    0% {
+      transform: scale3d(0, 1, 1);
+      transform-origin: left;
+    }
+    50% {
+      transform: scale3d(1, 1, 1);
+      transform-origin: left;
+    }
+    51% {
+      transform: scale3d(1, 1, 1);
+      transform-origin: right;
+    }
+    100% {
+      transform: scale3d(0, 1, 1);
+      transform-origin: right;
+    }
+  }
+`);
+
 export const themeStyles = squish(`
   ${layerStyles}
 
   @layer theme {
     ${tokenStyles}
     ${fontStyles}
+  }
+
+  @layer base {
+    ${baseStyles}
   }
 `);
